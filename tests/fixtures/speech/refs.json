@@ -1,0 +1,57 @@
+﻿{
+    "q01":  {
+                "voice":  "Microsoft David Desktop",
+                "bytes":  149006,
+                "text":  "Tell me about a time when you had to lead a team through a difficult project."
+            },
+    "q02":  {
+                "voice":  "Microsoft Zira Desktop",
+                "bytes":  147726,
+                "text":  "What is your greatest strength and how has it helped you in your previous roles?"
+            },
+    "q03":  {
+                "voice":  "Microsoft David Desktop",
+                "bytes":  129806,
+                "text":  "Can you walk me through how you would design a scalable notification system?"
+            },
+    "q04":  {
+                "voice":  "Microsoft Zira Desktop",
+                "bytes":  126766,
+                "text":  "Why do you want to work at this company and what excites you about this role?"
+            },
+    "q05":  {
+                "voice":  "Microsoft David Desktop",
+                "bytes":  163246,
+                "text":  "Describe a situation where you disagreed with a coworker and how you resolved it."
+            },
+    "q06":  {
+                "voice":  "Microsoft Zira Desktop",
+                "bytes":  172846,
+                "text":  "How do you prioritize your tasks when you have multiple deadlines at the same time?"
+            },
+    "q07":  {
+                "voice":  "Microsoft David Desktop",
+                "bytes":  126286,
+                "text":  "What is the difference between a process and a thread and when would you use each?"
+            },
+    "q08":  {
+                "voice":  "Microsoft Zira Desktop",
+                "bytes":  179246,
+                "text":  "Tell me about a project where you used Kubernetes and PostgreSQL in production."
+            },
+    "q09":  {
+                "voice":  "Microsoft David Desktop",
+                "bytes":  101486,
+                "text":  "Where do you see yourself in five years?"
+            },
+    "q10":  {
+                "voice":  "Microsoft Zira Desktop",
+                "bytes":  87086,
+                "text":  "Do you have any questions for us?"
+            },
+    "p01":  {
+                "voice":  "Microsoft David Desktop",
+                "bytes":  181326,
+                "text":  "Tell me about a time when you had to deliver bad news to a stakeholder."
+            }
+}

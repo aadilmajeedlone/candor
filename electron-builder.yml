@@ -1,0 +1,56 @@
+appId: com.candor.interview
+productName: Candor
+copyright: Copyright © Candor
+directories:
+  output: release
+  buildResources: build
+
+# Only the compiled app and its production dependencies are packaged (no sources, tests or source maps).
+files:
+  - out/**/*
+  - '!**/*.map'
+  - package.json
+asar: true
+# A worker thread and a native library cannot be loaded from inside an archive, so they are unpacked beside it:
+# the speech worker script, and the prebuilt speech engine (sherpa-onnx: a Node-API add-on plus its DLLs).
+asarUnpack:
+  - out/main/sttWorker.js
+  - node_modules/sherpa-onnx-node/**
+  - node_modules/sherpa-onnx-win-x64/**
+# The on-device speech models (about 230 MB) live outside the archive: the native library reads them by path.
+extraResources:
+  - from: resources/models
+    to: models
+    filter:
+      - '**/*'
+npmRebuild: false # the only native add-on (sherpa-onnx) ships prebuilt for Node-API, so nothing is compiled; SQLite is built into Node
+electronLanguages:
+  - en-US
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.ico
+  artifactName: Candor-Setup-${version}.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false # installs for the current user; no administrator rights needed
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  deleteAppDataOnUninstall: false # your interviews, résumés and settings stay unless you purge them in Settings → Privacy
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+
+# Hardening: the packaged executable cannot be reused as a generic Node runtime, cannot be told to open a
+# debugger through flags or environment variables, and loads its code only from the integrity-checked asar.
+electronFuses:
+  runAsNode: false
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
+  grantFileProtocolExtraPrivileges: false
+  enableCookieEncryption: true

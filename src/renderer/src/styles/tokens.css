@@ -1,0 +1,88 @@
+/* Design tokens. One accent (stage-light amber) on an ink-dark canvas; a warm paper theme for light mode. */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0c11;
+  --bg-elev: #0f1219;
+  --bg-panel: #141822;
+  --bg-raised: #1a1f2c;
+  --bg-hover: #1e2433;
+  --line: #222939;
+  --line-strong: #2f384d;
+  --text: #edf0f7;
+  --text-dim: #a5aec3;
+  --text-faint: #6d788f;
+  --accent: #f4b740;
+  --accent-strong: #ffc85e;
+  --accent-ink: #1b1304;
+  --accent-soft: rgba(244, 183, 64, 0.13);
+  --ok: #46d6a2;
+  --ok-soft: rgba(70, 214, 162, 0.13);
+  --warn: #f2a24c;
+  --warn-soft: rgba(242, 162, 76, 0.14);
+  --bad: #ff6f6f;
+  --bad-soft: rgba(255, 111, 111, 0.13);
+  --info: #6fa9ff;
+  --info-soft: rgba(111, 169, 255, 0.13);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 32px rgba(0, 0, 0, 0.35);
+  --scrim: rgba(4, 6, 10, 0.66);
+  --answer-bg: linear-gradient(180deg, #171c28 0%, #131722 100%);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f1ea;
+  --bg-elev: #fbf9f4;
+  --bg-panel: #ffffff;
+  --bg-raised: #f8f5ee;
+  --bg-hover: #efebe1;
+  --line: #e2dccd;
+  --line-strong: #cfc7b3;
+  --text: #191c25;
+  --text-dim: #4f566a;
+  --text-faint: #7d8497;
+  --accent: #b9770e;
+  --accent-strong: #9a6109;
+  --accent-ink: #fffaf0;
+  --accent-soft: rgba(185, 119, 14, 0.12);
+  --ok: #17845f;
+  --ok-soft: rgba(23, 132, 95, 0.11);
+  --warn: #b25f0a;
+  --warn-soft: rgba(178, 95, 10, 0.11);
+  --bad: #c73a3a;
+  --bad-soft: rgba(199, 58, 58, 0.1);
+  --info: #2b62c9;
+  --info-soft: rgba(43, 98, 201, 0.1);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 8px 24px rgba(60, 45, 20, 0.08);
+  --scrim: rgba(30, 24, 12, 0.4);
+  --answer-bg: linear-gradient(180deg, #ffffff 0%, #fbf9f4 100%);
+}
+
+:root[data-contrast='high'] {
+  --line: color-mix(in srgb, var(--text) 42%, transparent);
+  --line-strong: color-mix(in srgb, var(--text) 62%, transparent);
+  --text-dim: color-mix(in srgb, var(--text) 88%, var(--bg));
+  --text-faint: color-mix(in srgb, var(--text) 70%, var(--bg));
+}
+
+:root {
+  --font-ui: 'Inter Variable', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-mono: 'Cascadia Mono', 'Cascadia Code', ui-monospace, 'SF Mono', Consolas, monospace;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-sm: 7px;
+  --nav-w: 232px;
+  --nav-w-collapsed: 68px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 160ms;
+}
+
+:root[data-motion='reduced'] *,
+:root[data-motion='reduced'] *::before,
+:root[data-motion='reduced'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}

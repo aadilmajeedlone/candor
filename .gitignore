@@ -1,0 +1,31 @@
+node_modules/
+out/
+release/
+dist/
+test-results/
+playwright-report/
+*.log
+.env
+.env.local
+.DS_Store
+*.db
+*.db-wal
+*.db-shm
+
+# Google / cloud credentials must never be committed
+application_default_credentials.json
+client_secret*.json
+*service-account*.json
+*serviceaccount*.json
+*.pem
+*.p12
+
+# Speech models downloaded for local benchmarking (large, reproducible)
+.model-cache/
+
+# Measurements written by the benchmarks
+bench-results/
+
+# Speech models fetched by `npm run models` (231 MB; pinned by SHA-256 in src/main/stt/local/catalog.json).
+# Third-party files, too large for git (one is over GitHub's 100 MB limit) and reproducible.
+resources/models/
